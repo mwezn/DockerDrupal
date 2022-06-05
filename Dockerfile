@@ -1,5 +1,5 @@
 FROM drupal:latest
 WORKDIR /var/www/html
 COPY . ./
-RUN echo 'we are running some # of cool things' 
+CMD docker-compose up
 EXPOSE 80
