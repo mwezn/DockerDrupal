@@ -1,2 +1,4 @@
 FROM drupal:latest
-COPY . /var/www/html
+WORKDIR /var/www/html
+RUN echo 'we are running some # of cool things' 
+EXPOSE 80

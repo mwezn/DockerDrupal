@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   drupal:
-    image: drupal:latest ##Think this will build the Dockerfile ive created in /php instead of image: php:apache
+    image: drupal:latest 
     container_name: drupalWeb
     volumes:
      ## - drupal_modules:/var/www/html/modules
