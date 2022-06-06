@@ -15,7 +15,7 @@ services:
 
   
     ports:
-      - 80:80  
+      - 8081:8081 
   db:
     image: mysql:8.0
     container_name: mysqldb12345
