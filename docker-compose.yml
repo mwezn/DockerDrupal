@@ -17,25 +17,29 @@ services:
       static-network:
         ipv4_address: 172.20.0.3
   db:
-    image: mysql:8.0
-    container_name: mysqldb12345
-    command: --default-authentication-plugin=mysql_native_password
+    image: postgres:latest
+    container_name: postgresdb
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
+    environment: 
+      - POSTGRES_DB=shelter
+      - POSTGRES_USER=futureproof
+      - POSTGRES_PASSWORD=shelterpass
+      
     ports:
-    - 3306:3306
+    - 5432:5432
     volumes:
-    - db_data:/var/lib/mysql
+      - "dbdata:/var/lib/postgresql/data"
     networks:
       static-network:
         ipv4_address: 172.20.0.2
+
+    
 volumes:
    drupal_modules:
    drupal_profiles:
    drupal_themes:
    drupal_sites:
-   db_data:
+   dbdata:
 networks:
   static-network:
     ipam:
